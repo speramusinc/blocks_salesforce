@@ -17,7 +17,7 @@ view: account {
       }
 
       when: {
-        sql: ${number_of_employees} > 50 ;;
+        sql: ${locations} > 50 ;;
         label: "Mid-Market"
       }
 
