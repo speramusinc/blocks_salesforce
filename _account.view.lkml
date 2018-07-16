@@ -117,7 +117,7 @@ view: _account {
   }
   dimension: locations {
     type: number
-    sql: ${TABLE}.locations_c::int ;;
+    sql: case when ${TABLE}.locations_c ~ '^[0-9]+$' then ${TABLE}.locations_c::int end;;
   }
   dimension: master_record_id {
     type: string
