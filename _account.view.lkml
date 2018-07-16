@@ -117,7 +117,7 @@ view: _account {
   }
   dimension: locations {
     type: number
-    sql: ${TABLE}.locations_c ;;
+    sql: ${TABLE}.locations_c::int ;;
   }
   dimension: master_record_id {
     type: string
