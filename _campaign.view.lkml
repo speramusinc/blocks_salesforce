@@ -1,5 +1,5 @@
 view: _campaign {
-  sql_table_name: salesforce._campaign ;;
+  sql_table_name: ft_salesforce.campaign ;;
   # dimensions #
 
   dimension: id {
@@ -32,7 +32,7 @@ view: _campaign {
 
   dimension_group: created {
     type: time
-    timeframes: [date, week, month]
+    timeframes: [raw, date, week, month]
     sql: ${TABLE}.created_date ;;
   }
 
@@ -43,7 +43,7 @@ view: _campaign {
 
   dimension_group: end {
     type: time
-    timeframes: [date, week, month]
+    timeframes: [raw, date, week, month]
     convert_tz: no
     sql: ${TABLE}.end_date ;;
   }

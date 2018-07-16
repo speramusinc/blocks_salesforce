@@ -1,6 +1,6 @@
 # preliminaries #
 
-connection: "salesforce"
+connection: "speramus_redshift"
 
 include: "*.view"
 

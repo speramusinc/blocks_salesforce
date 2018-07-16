@@ -1,5 +1,5 @@
 view: _opportunity {
-  sql_table_name: salesforce._opportunity ;;
+  sql_table_name: ft_salesforce.opportunity ;;
   # dimensions #
 
   dimension: id {
@@ -27,7 +27,7 @@ view: _opportunity {
 
   dimension_group: close {
     type: time
-    timeframes: [date, week, month]
+    timeframes: [raw, date, week, month]
     convert_tz: no
     sql: ${TABLE}.close_date ;;
   }
@@ -40,7 +40,7 @@ view: _opportunity {
 
   dimension_group: created {
     type: time
-    timeframes: [date, week, month]
+    timeframes: [raw, date, week, month]
     sql: ${TABLE}.created_date ;;
   }
 

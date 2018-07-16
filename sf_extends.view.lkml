@@ -205,13 +205,6 @@ view: opportunity {
     }
   }
 
-  dimension: created {
-    #X# Invalid LookML inside "dimension": {"timeframes":["date","week","month","raw"]}
-  }
-
-  dimension: close {
-    #X# Invalid LookML inside "dimension": {"timeframes":["date","week","month","raw"]}
-  }
 
   dimension: days_open {
     type: number
