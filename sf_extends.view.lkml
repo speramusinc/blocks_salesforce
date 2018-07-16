@@ -10,25 +10,37 @@ view: account {
 
   dimension: business_segment {
     type: string
-
     case: {
       when: {
-        sql: ${number_of_employees} BETWEEN 0 AND 500 ;;
+        sql: ${locations} BETWEEN 0 AND 50 ;;
         label: "Small Business"
       }
 
       when: {
-        sql: ${number_of_employees} BETWEEN 501 AND 1000 ;;
+        sql: ${number_of_employees} > 50 ;;
         label: "Mid-Market"
-      }
-
-      when: {
-        sql: ${number_of_employees} > 1000 ;;
-        label: "Enterprise"
       }
 
       else: "Unknown"
     }
+#     case: {
+#       when: {
+#         sql: ${number_of_employees} BETWEEN 0 AND 500 ;;
+#         label: "Small Business"
+#       }
+#
+#       when: {
+#         sql: ${number_of_employees} BETWEEN 501 AND 1000 ;;
+#         label: "Mid-Market"
+#       }
+#
+#       when: {
+#         sql: ${number_of_employees} > 1000 ;;
+#         label: "Enterprise"
+#       }
+#
+#       else: "Unknown"
+#     }
   }
 
   # measures #
@@ -260,7 +272,7 @@ view: opportunity {
       value: "No"
     }
 
-    value_format: "[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";$0.00"
+    value_format: "$#,##0"
   }
 
   measure: average_deal_size {

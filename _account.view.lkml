@@ -115,7 +115,10 @@ view: _account {
     timeframes: [time, date, week, month]
     sql: ${TABLE}.last_viewed_date ;;
   }
-
+  dimension: locations {
+    type: number
+    sql: ${TABLE}.locations_c ;;
+  }
   dimension: master_record_id {
     type: string
     hidden: yes
